@@ -1,0 +1,57 @@
+.header {
+    background-color: #28282a;
+    top: 0;
+    left: auto;
+    right: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+    height: 70px;
+}
+
+.empty {
+    flex:1
+}
+
+.title {
+    color: white;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+    margin:0;
+}
+
+.links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.createLink {
+    color: white;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-left: 24px;
+    text-decoration: none;
+}
+
+.homeLink {
+    color: white;
+    font-weight: 700;
+    line-height: 1.6;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin-left: 24px;
+    text-decoration: none;
+}
