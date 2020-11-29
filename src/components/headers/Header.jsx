@@ -1,29 +1,43 @@
-import React from 'react'
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import styles from "./Header.module.css";
-
+import styles from './Header.module.css';
+import Dialog from "../dialog/Dialog.jsx";
 const Header = (props) => {
+    const [openDialog, setOpenDialog] = useState(false);
+    const [message, setMessage] = useState("");
+
+    const onCancel = (event) =>{
+        setMessage("You haven't finished yet. Are you sure to cancel?");
+        setOpenDialog(!openDialog);
+    }
     return (
         <div>
-        <header className={styles.header}>
-            <div className={styles.navbar}>
-                <div className={styles.empty}></div>
-                    
+            <Dialog open={openDialog} onClose={setOpenDialog} message={message} ok={props.onCancel} />
+
+            <header className={styles.header}>
+                <div className={styles.navbar}>
+                    <div className={styles.empty}></div>
+
                     <h3 className={styles.title}>thrift market</h3>
 
-                <div className={styles.links}>
-                    <Link className={styles.createLink} to="/create">
-                        create
-                    </Link>
-                    <Link className={styles.homeLink} to="/">
-                        home
-                    </Link>
-                </div>
-            </div>
-        </header>
+                    <div className={styles.links}>
+                        {!props.createPage && (
+                            <Link className={styles.createLink} to="/create">
+                                create
+                            </Link>
+                        )}
 
+                        <Link className={styles.homeLink} to="/">
+                            home
+                        </Link>
+                        {props.createPage && (
+                            <button className={styles.cancel} onClick={onCancel}>cancel</button>
+                        )}
+                    </div>
+                </div>
+            </header>
         </div>
-    )
-}
+    );
+};
 
 export default Header;

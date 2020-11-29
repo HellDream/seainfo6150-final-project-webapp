@@ -1,0 +1,96 @@
+.section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    border: 1px solid rgb(238, 231, 231);
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
+    margin: 5rem;
+    width: 100%;
+}
+
+.formTitle {
+    font-size: 2rem;
+    align-self: flex-start;
+    padding-left: 4rem;
+    padding-top: 3rem;
+}
+
+.form {
+    padding-left: 4rem;
+    padding-bottom: 3rem;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    gap: 1rem;
+}
+
+.label {
+    width: 50%;
+}
+
+.input {
+    height: 2rem;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid rgb(37, 37, 37);
+}
+
+.inputTextArea {
+    height: 5rem;
+    width: 100%;
+    font-size: 1.5rem;
+    border-radius: 5px;
+
+}
+
+.submitButton {
+    height: 2.5rem;
+    background-color: #28282a;
+    border-radius: 5px;
+    border: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    background-color: #2d2d2e;
+}
+
+@media screen and (min-width: 500px) {
+    .container {
+        width: 35rem;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .container {
+        width: 50rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .inputContainer {
+        flex-direction: column;
+        padding-bottom: 1rem;
+        align-items: flex-start;
+    }
+}

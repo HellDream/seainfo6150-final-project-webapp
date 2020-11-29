@@ -3,10 +3,13 @@ import { Switch, Route, Link } from 'react-router-dom';
 
 import Home from './pages/home/homepage.jsx';
 import CategoryPage from './pages/category/Category.jsx';
+import ProductDetailPage from './pages/product/ProductDetailPage.jsx';
 import Foo from './Foo/Foo.jsx';
 import Bar from './Bar/Bar.jsx';
 import Baz from './Baz/Baz.jsx';
 import Error from './Error/Error.jsx';
+import ProductCreatePage from './pages/product/ProductCreatePage.jsx';
+import ContactUsPage from './pages/contactUs/ContactUsPage.jsx';
 // here is some external content. look at the /baz route below
 // to see how this content is passed down to the components via props
 const externalContent = {
@@ -23,6 +26,8 @@ function App() {
             renders the first one that matches the current URL. */}
             <Switch>
                 <Route path="/" exact component={Home} />
+                <Route path="/create" exact component={ProductCreatePage} />
+                <Route path="/contact-us" exact component={ContactUsPage} />
                 <Route
                     path="/:categoryTitle"
                     exact
@@ -41,7 +46,7 @@ function App() {
                     render={({ match }) => (
                         // getting the parameters from the url and passing
                         // down to the component as props
-                        <Bar
+                        <ProductDetailPage
                             categoryTitle={match.params.categoryTitle}
                             productId={match.params.productId}
                         />

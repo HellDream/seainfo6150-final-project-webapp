@@ -1,6 +1,8 @@
 .section {
     margin-top:70px;
     height: 100%;
+    position: relative;
+
 }
 
 .container {

@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: space-between; */
+    position: relative;
     margin-top:70px;
     place-items: center;
     height: 100%;
