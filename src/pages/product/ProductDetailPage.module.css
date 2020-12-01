@@ -1,5 +1,5 @@
 .section {
-    padding-top:70px;
+    padding-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,6 +13,7 @@
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
     margin: 5rem;
     width: 20rem;
+    font-family: 'Raleway', serif;
 }
 .imageContainer {
     width: 100%;
@@ -21,7 +22,6 @@
 .image {
     width: 100%;
     border-radius: 10px 10px 0px 0px;
-
 }
 
 .titleContainer {
@@ -33,14 +33,16 @@
 }
 .title {
     font-size: 24px;
-    padding-left:2rem;
+    padding-left: 2rem;
     margin: 0;
+    font-weight: 700;
 }
 .price {
     font-size: 24px;
-    padding-right:2rem;
+    padding-right: 2rem;
     color: red;
-    margin:0;
+    margin: 0;
+    font-weight: 700;
 }
 .contactContainer {
     padding-left: 2rem;
@@ -49,41 +51,42 @@
 
 .contact {
     font-size: 18px;
+    font-weight: 600;
 }
 
 .time {
     font-size: 14px;
+    font-weight: 600;
 }
 
 .descriptionContainer {
     padding-left: 2rem;
-    padding-right:2rem;
+    padding-right: 2rem;
     padding-bottom: 2rem;
+    font-weight: 500;
 }
 
 .backBtn {
     align-self: flex-start;
     background-color: transparent;
-    border:none;
-    background: url("../../images/back.svg");
+    border: none;
+    background: url('../../images/back.svg');
     background-repeat: no-repeat;
     background-size: contain;
     width: 1.5rem;
     height: 1.5rem;
-    margin-left:3rem;
-    margin-top:1rem;
+    margin-left: 3rem;
+    margin-top: 1rem;
     cursor: pointer;
 }
 
-
-@media screen and (min-width:500px) {
+@media screen and (min-width: 500px) {
     .container {
         width: 30rem;
     }
-
 }
 
-@media screen and (min-width:800px) {
+@media screen and (min-width: 800px) {
     .container {
         width: 50rem;
     }

@@ -206,7 +206,8 @@ const ProductCreatePage = (props) => {
                 message: 'You have uploaded your item successfully!',
                 ok: () => {
                     setDialogState({ ...dialogState, open: false });
-                    window.location.href = `/${data.category}/product/${data.slug}`;
+                    props.history.push(`/${data.category}/product/${data.slug}`)
+                    
                 },
                 onClose: () => {
                     setDialogState({ ...dialogState, open: false });

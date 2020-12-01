@@ -4,7 +4,7 @@
     border: 1px solid rgb(238, 231, 231);
     border-radius: 10px;
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Raleway', serif;
     justify-content: space-between;
     width: 25rem;
     text-decoration: none;
@@ -39,15 +39,16 @@
 .title {
     margin:0;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     color: black;
+
 }
 
 .price {
     margin:0;
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     text-decoration: none;
     color: red;
 }
@@ -56,4 +57,6 @@
     margin-left: 1rem;
     padding-bottom: 0.5rem;
     text-decoration: none;
+    font-weight: 500;
+
 }

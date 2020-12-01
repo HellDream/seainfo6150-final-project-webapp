@@ -5,20 +5,18 @@ import { isEmpty } from 'lodash';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import LoadingProgress from '../../components/progress/LoadingProgress';
-
+import Error from '../../Error/Error';
 const ProductPage = (props) => {
     dayjs.extend(relativeTime);
 
     const [product, setProduct] = useState();
-    const [loading, setLoading] = useState(false);
-
+    const [hasError, setHasError] = useState(false);
     useEffect(() => {
-        document.title = "Thrift Store - Product Detail";
+        document.title = 'Thrift Store - Product Detail';
 
         const fetchData = async () => {
-            setLoading(true);
             const res = await fetch(
-                'https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/getProductById',
+                'http://localhost:5000/seainfo6150-final-project/us-central1/api/getProductById',
                 {
                     method: 'POST',
                     headers: {
@@ -30,12 +28,15 @@ const ProductPage = (props) => {
                     }),
                 }
             );
-            const json = await res.json();
-            setProduct(json);
-            setLoading(false);
+            if (res.status === 200) {
+                const json = await res.json();
+                setProduct(json);
+            } else {
+                setHasError(true);
+            }
         };
 
-        if (isEmpty(product)) {
+        if (isEmpty(product) && !hasError) {
             if (props.product) {
                 setProduct(props.product);
             } else {
@@ -43,6 +44,9 @@ const ProductPage = (props) => {
             }
         }
     }, [product]);
+    if (hasError) {
+        return <Error />;
+    }
 
     return isEmpty(product) ? (
         <LoadingProgress />
@@ -50,9 +54,13 @@ const ProductPage = (props) => {
         <>
             <Header />
             <section className={styles.section}>
-                    <button className={styles.backBtn} onClick={()=>{props.history.goBack();}}></button>
+                <button
+                    className={styles.backBtn}
+                    onClick={() => {
+                        props.history.goBack();
+                    }}
+                ></button>
                 <div className={styles.container}>
-
                     <div className={styles.imageContainer}>
                         <img
                             className={styles.image}
@@ -63,7 +71,7 @@ const ProductPage = (props) => {
                     <div className={styles.titleContainer}>
                         <h3 className={styles.title}>{product.title}</h3>
                         <h4 className={styles.price}>
-                            {product.price.toFixed(2)}
+                            ${product.price.toFixed(2)}
                         </h4>
                     </div>
                     <div className={styles.contactContainer}>

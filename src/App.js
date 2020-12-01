@@ -1,23 +1,20 @@
 import React from 'react';
-import { Switch, Route, Link } from 'react-router-dom';
+import { Switch, Route, Router, Redirect } from 'react-router-dom';
 
 import Home from './pages/home/homepage.jsx';
 import CategoryPage from './pages/category/Category.jsx';
 import ProductDetailPage from './pages/product/ProductDetailPage.jsx';
-import Foo from './Foo/Foo.jsx';
-import Bar from './Bar/Bar.jsx';
-import Baz from './Baz/Baz.jsx';
 import Error from './Error/Error.jsx';
 import ProductCreatePage from './pages/product/ProductCreatePage.jsx';
 import ContactUsPage from './pages/contactUs/ContactUsPage.jsx';
 // here is some external content. look at the /baz route below
 // to see how this content is passed down to the components via props
-const externalContent = {
-    id: 'article-1',
-    title: 'An Article',
-    author: 'April Bingham',
-    text: 'Some text in the article',
-};
+// const externalContent = {
+//     id: 'article-1',
+//     title: 'An Article',
+//     author: 'April Bingham',
+//     text: 'Some text in the article',
+// };
 
 function App() {
     return (
