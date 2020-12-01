@@ -4,7 +4,7 @@ import Header from '../../components/headers/Header.jsx';
 import ProductList from '../../components/ProductList/ProductList';
 import Footer from '../../components/footer/Footer';
 import { isEmpty } from "lodash";
-import ReactDOM from 'react-dom'
+import LoadingProgress from '../../components/progress/LoadingProgress';
 
 
 const CategoryPage = (props) => {
@@ -31,12 +31,15 @@ const CategoryPage = (props) => {
             fetchData();
         }
     }, [products, props.categoryTitle]);
-    return ( isEmpty(products) ? <div></div>:
+    return ( isEmpty(products) ? <LoadingProgress />:
         <>
             <Header />
             <section className={styles.section}>
                 <div className={styles.container}>
-                    <div className={styles.block}></div>
+                    <div className={styles.block}>
+                        <button className={styles.backBtn} onClick={()=>{props.history.goBack();}}></button>
+                    </div>
+                    
                     <div className={styles.headLineContainer}>
                         <h1 className={styles.headLine}>
                             {props.categoryTitle}

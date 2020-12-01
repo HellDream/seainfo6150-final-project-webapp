@@ -15,6 +15,19 @@
 .block {
     height: 100px;
     width: auto;
+    align-self: flex-start;
+    margin-top:1rem;
+    padding-left:3rem;
+}
+.backBtn {
+    background-color: transparent;
+    border:none;
+    background: url("../../images/back.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
 }
 
 .headLineContainer {
@@ -31,3 +44,16 @@
 }
 
 
+@media screen and (min-width: 700px) {
+    .backBtn {
+        width: 2rem;
+        height: 2rem;
+    }
+  }
+
+@media screen and (min-width: 1150px) {
+    .backBtn {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}

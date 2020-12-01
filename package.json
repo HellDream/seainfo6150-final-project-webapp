@@ -5,6 +5,7 @@
   "private": true,
   "proxy": "https://validator.w3.org/",
   "dependencies": {
+    "dayjs": "^1.9.6",
     "node-sass": "^4.14.1",
     "react": "^16.8.6",
     "react-dialog": "^1.0.2",

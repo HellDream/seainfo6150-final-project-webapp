@@ -132,6 +132,15 @@
     cursor: pointer;
 }
 
+.imageInput {
+    display:none;
+}
+.selectedImage {
+    max-width:20rem;
+    max-height:20rem;
+    padding-right:2rem;
+}
+
 .submitButton {
     height: 2.5rem;
     background-color: #28282a;

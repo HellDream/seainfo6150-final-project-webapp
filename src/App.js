@@ -31,11 +31,14 @@ function App() {
                 <Route
                     path="/:categoryTitle"
                     exact
-                    render={({match}) => (
+                    render={(props) => (
                         // getting the parameters from the url and passing
                         // down to the component as props
                         <CategoryPage
-                            categoryTitle={match.params.categoryTitle}
+                            match={props.match}
+                            location={props.location}
+                            history={props.history}
+                            categoryTitle={props.match.params.categoryTitle}
                         />
                     )}
                 />
@@ -47,16 +50,14 @@ function App() {
                         // getting the parameters from the url and passing
                         // down to the component as props
                         <ProductDetailPage
+                            match={props.match}
+                            location={props.location}
+                            history={props.history}
                             categoryTitle={props.match.params.categoryTitle}
                             productId={props.match.params.productId}
                             product={props.location.product}
                         />
                     )}
-                />
-                <Route
-                    path="/baz"
-                    exact
-                    render={() => <Baz content={externalContent} />}
                 />
                 <Route component={Error} />
             </Switch>

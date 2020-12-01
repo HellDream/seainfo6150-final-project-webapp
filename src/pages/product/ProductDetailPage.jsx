@@ -4,15 +4,19 @@ import Header from '../../components/headers/Header.jsx';
 import { isEmpty } from 'lodash';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
+import LoadingProgress from '../../components/progress/LoadingProgress';
 
 const ProductPage = (props) => {
     dayjs.extend(relativeTime);
 
     const [product, setProduct] = useState();
+    const [loading, setLoading] = useState(false);
+
     useEffect(() => {
         document.title = "Thrift Store - Product Detail";
 
         const fetchData = async () => {
+            setLoading(true);
             const res = await fetch(
                 'https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/getProductById',
                 {
@@ -28,6 +32,7 @@ const ProductPage = (props) => {
             );
             const json = await res.json();
             setProduct(json);
+            setLoading(false);
         };
 
         if (isEmpty(product)) {
@@ -40,12 +45,14 @@ const ProductPage = (props) => {
     }, [product]);
 
     return isEmpty(product) ? (
-        <div />
+        <LoadingProgress />
     ) : (
         <>
             <Header />
             <section className={styles.section}>
+                    <button className={styles.backBtn} onClick={()=>{props.history.goBack();}}></button>
                 <div className={styles.container}>
+
                     <div className={styles.imageContainer}>
                         <img
                             className={styles.image}

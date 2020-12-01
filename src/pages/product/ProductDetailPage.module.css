@@ -61,15 +61,34 @@
     padding-bottom: 2rem;
 }
 
+.backBtn {
+    align-self: flex-start;
+    background-color: transparent;
+    border:none;
+    background: url("../../images/back.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left:3rem;
+    margin-top:1rem;
+    cursor: pointer;
+}
+
 
 @media screen and (min-width:500px) {
     .container {
         width: 30rem;
     }
+
 }
 
 @media screen and (min-width:800px) {
     .container {
         width: 50rem;
+    }
+    .backBtn {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
