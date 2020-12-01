@@ -10,34 +10,34 @@ import others from '../../images/others.jpg';
 const categories = [
     {
         slug: 0,
-        title: 'Books',
+        title: 'books',
         imageURI: booksImg,
     },
     {
         slug: 1,
-        title: 'Electronics',
+        title: 'electronics',
         imageURI: electronicImg,
     },
     {
         slug: 2,
-        title: 'Funitures',
+        title: 'furnitures',
         imageURI: funituresImg,
     },
 
     {
         slug: 3,
-        title: 'Entertainment',
+        title: 'entertainments',
         imageURI: entertainImg,
     },
     {
         slug: 4,
-        title: 'Tools',
+        title: 'tools',
         imageURI: toolsImg,
     },
 
     {
         slug: 5,
-        title: 'Others',
+        title: 'others',
         imageURI: others,
     },
 ];

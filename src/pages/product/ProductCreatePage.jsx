@@ -1,12 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './ProductCreatePage.module.scss';
 import Header from '../../components/headers/Header.jsx';
+import Dialog from '../../components/dialog/Dialog';
 
 const ProductCreatePage = (props) => {
     const [selectCategory, setSelectCategory] = useState();
     const [next, setNext] = useState(true);
+    const [dialogState, setDialogState] = useState({
+        open: false,
+        message: '',
+        ok: null,
+        cancel: null,
+        onClose: null,
+    });
+
+    const [data, setData] = useState({
+        contactName: '',
+        email: '',
+        title: '',
+        price: 0.00,
+        description: '',
+    });
+
+    const [imgData, setImgData] = useState({
+        image: null,
+        imageUrl: null,
+    });
+
+    useEffect(() => {
+        document.title = "Thrift Store - Create Product"
+    });
+    
+
     const onChangeCategory = (event) => {
         setSelectCategory(event.target.value);
+        setData({ ...data, category: event.target.value.toLowerCase() });
     };
     const categoryFormPage = (
         <section className={styles.section}>
@@ -17,14 +45,14 @@ const ProductCreatePage = (props) => {
                     <div className={styles.labelContainer}>
                         <input
                             type="radio"
-                            id="Book"
-                            name="Book"
-                            value="Book"
+                            id="Books"
+                            name="Books"
+                            value="Books"
                             onChange={onChangeCategory}
-                            checked={selectCategory === 'Book'}
+                            checked={selectCategory === 'Books'}
                             className={styles.radio}
                         />
-                        <label className={styles.categoryLabel} htmlFor="Book">
+                        <label className={styles.categoryLabel} htmlFor="Books">
                             Book
                         </label>
                     </div>
@@ -78,32 +106,35 @@ const ProductCreatePage = (props) => {
                     </div>
                     <div className={styles.labelContainer}>
                         <input
-                            id="Entertainment"
+                            id="Entertainments"
                             type="radio"
-                            name="Entertainment"
-                            value="Entertainment"
+                            name="Entertainments"
+                            value="Entertainments"
                             onChange={onChangeCategory}
-                            checked={selectCategory === 'Entertainment'}
+                            checked={selectCategory === 'Entertainments'}
                             className={styles.radio}
                         />
                         <label
                             className={styles.categoryLabel}
-                            htmlFor="Entertainment"
+                            htmlFor="Entertainments"
                         >
                             Entertainment
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
                         <input
-                            id="Other"
+                            id="Others"
                             type="radio"
-                            name="Other"
-                            value="Other"
+                            name="Others"
+                            value="Others"
                             onChange={onChangeCategory}
-                            checked={selectCategory === 'Other'}
+                            checked={selectCategory === 'Others'}
                             className={styles.radio}
                         />
-                        <label className={styles.categoryLabel} htmlFor="Other">
+                        <label
+                            className={styles.categoryLabel}
+                            htmlFor="Others"
+                        >
                             Other
                         </label>
                     </div>
@@ -121,6 +152,35 @@ const ProductCreatePage = (props) => {
         </section>
     );
 
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        setDialogState({
+            open: true,
+            message: 'You have successfully posted your item! Go check it out!',
+            ok: () => {
+                props.history.goBack();
+            },
+            onClose: () => {
+                setDialogState({ ...dialogState, open: false });
+                props.history.goBack();
+            },
+        });
+    };
+
+    const handleChange = (event) => {
+        const name = event.target.name;
+        setData({...data, [name]:event.target.value});
+        console.log(data);
+    };
+
+    const handleImageChange = (event) => {
+        const image = event.target.files[0];
+        setImgData({...imgData, [image]: image});
+        const formData = new FormData();
+        formData.append('image', image, image.name);
+        // uploadImage(formData);
+      };
+
     const itemFormPage = (
         <section className={styles.section}>
             <div className={styles.container}>
@@ -134,9 +194,9 @@ const ProductCreatePage = (props) => {
                     ></button>
                 </div>
                 <h3 className={styles.formTitle}>Submit Your Item</h3>
-                <form className={styles.form}>
+                <form className={styles.form} onSubmit={handleSubmit}>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} for="contactName">
+                        <label className={styles.label} htmlFor="contactName">
                             Contact Name
                         </label>
                         <input
@@ -144,10 +204,13 @@ const ProductCreatePage = (props) => {
                             type="text"
                             id="contactName"
                             name="contactName"
+                            value={data.contactName}
+                            onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} for="email">
+                        <label className={styles.label} htmlFor="email">
                             Your Email
                         </label>
                         <input
@@ -155,10 +218,13 @@ const ProductCreatePage = (props) => {
                             type="email"
                             id="email"
                             name="email"
+                            value={data.email}
+                            onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} for="title">
+                        <label className={styles.label} htmlFor="title">
                             Item Title
                         </label>
                         <input
@@ -166,10 +232,13 @@ const ProductCreatePage = (props) => {
                             type="text"
                             id="title"
                             name="title"
+                            value={data.title}
+                            onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} for="price">
+                        <label className={styles.label} htmlFor="price">
                             Price
                         </label>
                         <input
@@ -177,16 +246,21 @@ const ProductCreatePage = (props) => {
                             type="number"
                             id="price"
                             name="price"
+                            value={data.price}
+                            onChange={handleChange}
+                            required
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} for="description">
+                        <label className={styles.label} htmlFor="description">
                             Description
                         </label>
                         <textarea
                             className={styles.inputTextArea}
                             type="text"
                             id="description"
+                            value={data.description}
+                            onChange={handleChange}
                             name="description"
                         />
                     </div>
@@ -195,7 +269,10 @@ const ProductCreatePage = (props) => {
                             Upload Image
                         </button>
                     </div>
-                    <button className={styles.submitButton} type="submit">
+                    <button
+                        className={styles.submitButton}
+                        type="submit"
+                    >
                         Submit
                     </button>
                 </form>
@@ -204,6 +281,12 @@ const ProductCreatePage = (props) => {
     );
     return (
         <>
+            <Dialog
+                open={dialogState.open}
+                message={dialogState.message}
+                ok={dialogState.ok}
+                onClose={dialogState.onClose}
+            />
             <Header
                 createPage={true}
                 onCancel={() => {

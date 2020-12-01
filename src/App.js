@@ -43,12 +43,13 @@ function App() {
                 <Route
                     path="/:categoryTitle/product/:productId"
                     exact
-                    render={({ match }) => (
+                    render={(props) => (
                         // getting the parameters from the url and passing
                         // down to the component as props
                         <ProductDetailPage
-                            categoryTitle={match.params.categoryTitle}
-                            productId={match.params.productId}
+                            categoryTitle={props.match.params.categoryTitle}
+                            productId={props.match.params.productId}
+                            product={props.location.product}
                         />
                     )}
                 />

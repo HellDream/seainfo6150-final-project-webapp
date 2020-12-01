@@ -7,7 +7,7 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     border: 1px solid rgb(238, 231, 231);
     border-radius: 10px;
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
@@ -43,7 +43,6 @@
     margin:0;
 }
 .contactContainer {
-    align-self: flex-start;
     padding-left: 2rem;
     padding-bottom: 2rem;
 }
@@ -58,6 +57,7 @@
 
 .descriptionContainer {
     padding-left: 2rem;
+    padding-right:2rem;
     padding-bottom: 2rem;
 }
 

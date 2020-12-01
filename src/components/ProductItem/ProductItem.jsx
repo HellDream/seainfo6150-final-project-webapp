@@ -1,30 +1,38 @@
 import React from 'react';
 import styles from './ProductItem.module.css';
 import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+
 const ProductItem = (props) => {
-    const description =
-        'In marketing, a product is an object or system made available for consumer use; \
-        it is anything that can be offered to a market to satisfy the desire or need of a customer';
-    const timeStamp = '11-23-2020';
+    dayjs.extend(relativeTime);
     return (
         <li className={styles.product}>
             <Link
                 className={styles.link}
-                to={`${props.category}/product/${props.product.slug}`}
+                to={{
+                    pathname: `${props.category}/product/${props.product.slug}`,
+                    product: props.product,
+                }}
             >
                 <div className={styles.imageBlock}>
                     <img
                         className={styles.image}
-                        src={props.product.imageURI}
+                        src={props.product.imageUrl}
                         alt={`${props.title}`}
                     />
                 </div>
                 <div className={styles.productInfoBlock}>
                     <h3 className={styles.title}>{props.product.title}</h3>
-                    <h4 className={styles.price}> $ 15.00</h4>
+                    <h4 className={styles.price}>
+                        ${props.product.price.toFixed(2)}
+                    </h4>
                 </div>
-                <time className={styles.time} dateTime={timeStamp}>
-                    {timeStamp}
+                <time
+                    className={styles.time}
+                    dateTime={props.product.postedTime}
+                >
+                    {dayjs(props.product.postedTime).fromNow()}
                 </time>
             </Link>
         </li>

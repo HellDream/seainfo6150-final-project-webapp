@@ -1,10 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './ProductDetailPage.module.css';
 import Header from '../../components/headers/Header.jsx';
-import bookImg from '../../images/books.jpg';
+import { isEmpty } from 'lodash';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 
 const ProductPage = (props) => {
-    return (
+    dayjs.extend(relativeTime);
+
+    const [product, setProduct] = useState();
+    useEffect(() => {
+        document.title = "Thrift Store - Product Detail";
+
+        const fetchData = async () => {
+            const res = await fetch(
+                'https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/getProductById',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        category: props.categoryTitle,
+                        slug: props.productId,
+                    }),
+                }
+            );
+            const json = await res.json();
+            setProduct(json);
+        };
+
+        if (isEmpty(product)) {
+            if (props.product) {
+                setProduct(props.product);
+            } else {
+                fetchData();
+            }
+        }
+    }, [product]);
+
+    return isEmpty(product) ? (
+        <div />
+    ) : (
         <>
             <Header />
             <section className={styles.section}>
@@ -12,31 +49,29 @@ const ProductPage = (props) => {
                     <div className={styles.imageContainer}>
                         <img
                             className={styles.image}
-                            src={bookImg}
+                            src={product.imageUrl}
                             alt="book"
                         />
                     </div>
                     <div className={styles.titleContainer}>
-                        <h3 className={styles.title}>Old book</h3>
-                        <h4 className={styles.price}>$15.00</h4>
+                        <h3 className={styles.title}>{product.title}</h3>
+                        <h4 className={styles.price}>
+                            {product.price.toFixed(2)}
+                        </h4>
                     </div>
                     <div className={styles.contactContainer}>
                         <address className={styles.contact}>
-                            Posted by John Doe{' '}
+                            Posted by {product.contactName + ' '}
                             <a href="mailto:kate.farley@nytimes.com">
-                                kate.farley@nytimes.com
+                                {product.email}
                             </a>
                         </address>
-                        <time datetime="2018-11-22">November 22, 2018 </time>
+                        <time dateTime={product.postedTime}>
+                            {dayjs(product.postedTime).fromNow()}{' '}
+                        </time>
                     </div>
                     <div className={styles.descriptionContainer}>
-                        <p>
-                            Made of copper and gold so that it would shine
-                            bright, the first torch took a beating from the
-                            weather and was replaced by a replica in 1984.
-                            It&rsquo;s been stored in the statue&rsquo;s
-                            pedestal ever since.
-                        </p>
+                        <p>{product.description}</p>
                     </div>
                 </div>
             </section>

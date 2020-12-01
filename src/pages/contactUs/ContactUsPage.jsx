@@ -1,7 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styles from './ContactUsPage.module.css';
 import Header from '../../components/headers/Header.jsx';
 const ContactUsPage = (props) => {
+    useEffect(()=>{
+        document.title = "Thrift Store - Contact Us";
+
+    });
     return (
         <>
             <Header
@@ -17,11 +21,11 @@ const ContactUsPage = (props) => {
                     </h3>
                     <form className={styles.form}>
                         <div className={styles.inputContainer}>
-                            <label  className={styles.label} for="message">Your Email:</label>
-                            <input type="email" className={styles.input} />
+                            <label  className={styles.label} htmlFor="message">Your Email:</label>
+                            <input type="email" className={styles.input} required />
                         </div>
                         <div className={styles.inputContainer}>
-                            <label className={styles.label} for="message">
+                            <label className={styles.label} htmlFor="message">
                                 Your Message:
                             </label>
                             <textarea
@@ -29,6 +33,7 @@ const ContactUsPage = (props) => {
                                 type="text"
                                 id="message"
                                 name="message"
+                                required
                             />
                         </div>
                         <button className={styles.submitButton} type="submit">

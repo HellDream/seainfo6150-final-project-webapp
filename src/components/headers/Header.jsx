@@ -18,7 +18,7 @@ const Header = (props) => {
                 <div className={styles.navbar}>
                     <div className={styles.empty}></div>
 
-                    <h3 className={styles.title}>thrift market</h3>
+                    <h3 className={styles.title}>thrift store</h3>
 
                     <div className={styles.links}>
                         {!props.createPage && (

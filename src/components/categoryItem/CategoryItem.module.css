@@ -9,6 +9,11 @@
     width: 25rem;
 }
 
+.link {
+    text-decoration: none;
+    color:black;
+}
+
 .imageBlock {
     height: 14rem;
 }
@@ -28,4 +33,5 @@
     font-weight: 500;
     text-decoration: none;
     color: black;
+    text-transform: capitalize;
 }

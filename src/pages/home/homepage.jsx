@@ -1,6 +1,7 @@
 import React from 'react'
 import CategoryList from '../../components/CategoryList/CategoryList.jsx';
 import Header from "../../components/headers/Header.jsx";
+import Footer from "../../components/footer/Footer.jsx";
 import styles from "./homepage.module.css";
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
                 <CategoryList />
             </div>
         </section>
+        <Footer />
         </>
     )
 }
