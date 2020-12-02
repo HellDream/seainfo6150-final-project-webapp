@@ -13,7 +13,7 @@
     display: flex;
     position: relative;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding-left: 24px;
     padding-right: 24px;
     height: 70px;
@@ -24,6 +24,21 @@
     width: 2rem;
     display: block;
 }
+
+.backBtn {
+    flex:1;
+    background-color: transparent;
+    border:none;
+    background: url("../../images/back.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding:0;
+    cursor: pointer;
+    outline:none;
+}
+
 
 .title {
     color: white;

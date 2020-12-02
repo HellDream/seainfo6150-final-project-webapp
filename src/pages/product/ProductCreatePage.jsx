@@ -55,7 +55,7 @@ const ProductCreatePage = (props) => {
                             className={styles.radio}
                         />
                         <label className={styles.categoryLabel} htmlFor="Books">
-                            Books
+                            <p>Books</p>
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
@@ -72,7 +72,8 @@ const ProductCreatePage = (props) => {
                             className={styles.categoryLabel}
                             htmlFor="Electronics"
                         >
-                            Electronics
+                            <p>
+                            Electronics</p>
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
@@ -86,7 +87,7 @@ const ProductCreatePage = (props) => {
                             className={styles.radio}
                         />
                         <label className={styles.categoryLabel} htmlFor="Tools">
-                            Tools
+                            <p>Tools</p>
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
@@ -103,7 +104,7 @@ const ProductCreatePage = (props) => {
                             className={styles.categoryLabel}
                             htmlFor="Furnitures"
                         >
-                            Furnitures
+                            <p>Furnitures</p>
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
@@ -120,7 +121,7 @@ const ProductCreatePage = (props) => {
                             className={styles.categoryLabel}
                             htmlFor="Entertainments"
                         >
-                            Entertainments
+                            <p>Entertainments</p>
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
@@ -137,7 +138,7 @@ const ProductCreatePage = (props) => {
                             className={styles.categoryLabel}
                             htmlFor="Others"
                         >
-                            Others
+                            <p>Others</p>
                         </label>
                     </div>
                     <button

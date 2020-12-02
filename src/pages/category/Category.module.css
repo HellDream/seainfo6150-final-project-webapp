@@ -34,7 +34,7 @@
     place-items: center;
 }
 .headLine {
-    font-size: 48px;
+    font-size: 2.5rem;
     font-family: 'Raleway', serif;
     font-weight: 700;
     line-height: 1.2;
@@ -48,6 +48,10 @@
     .backBtn {
         width: 2rem;
         height: 2rem;
+    }
+    .headLine {
+        font-size: 3rem;
+
     }
   }
 

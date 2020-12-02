@@ -16,7 +16,7 @@ const ProductPage = (props) => {
 
         const fetchData = async () => {
             const res = await fetch(
-                'http://localhost:5000/seainfo6150-final-project/us-central1/api/getProductById',
+                'https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/getProductById',
                 {
                     method: 'POST',
                     headers: {
@@ -52,14 +52,10 @@ const ProductPage = (props) => {
         <LoadingProgress />
     ) : (
         <>
-            <Header />
-            <section className={styles.section}>
-                <button
-                    className={styles.backBtn}
-                    onClick={() => {
+            <Header back={() => {
                         props.history.goBack();
-                    }}
-                ></button>
+                    }}/>
+            <section className={styles.section}>
                 <div className={styles.container}>
                     <div className={styles.imageContainer}>
                         <img

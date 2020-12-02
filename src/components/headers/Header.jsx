@@ -11,6 +11,12 @@ const Header = (props) => {
         setOpenDialog(!openDialog);
     };
 
+    const backBtn = props.back ? (
+        <button className={styles.backBtn} onClick={props.back}></button>
+    ) : (
+        <div className={styles.empty}></div>
+    );
+
     return (
         <div>
             <Dialog
@@ -22,7 +28,7 @@ const Header = (props) => {
 
             <header className={styles.header}>
                 <div className={styles.navbar}>
-                    <div className={styles.empty}></div>
+                    {backBtn}
                     <Link className={styles.homeLink} to="/">
                         <h3 className={styles.title}>thrift store</h3>
                     </Link>
