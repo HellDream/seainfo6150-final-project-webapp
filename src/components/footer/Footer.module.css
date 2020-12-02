@@ -3,6 +3,8 @@
     display:flex;
     flex-direction: column;
     align-items: center;
+    font-family: 'Raleway', serif;
+
 }
 
 .content {
@@ -12,5 +14,5 @@
 
 .content:hover {
     text-decoration: underline;
-    color:blue;
+    font-weight: 700;
 }

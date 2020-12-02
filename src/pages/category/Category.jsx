@@ -38,7 +38,7 @@ const CategoryPage = (props) => {
         if (isEmpty(products) && !hasError) {
             fetchData();
         }
-    }, [products, props.categoryTitle]);
+    }, [products, hasError, props.categoryTitle]);
 
     if (hasError) {
         return <Error />;

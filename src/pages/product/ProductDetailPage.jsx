@@ -43,7 +43,7 @@ const ProductPage = (props) => {
                 fetchData();
             }
         }
-    }, [product]);
+    }, [product, hasError, props.categoryTitle, props.productId, props.product]);
     if (hasError) {
         return <Error />;
     }

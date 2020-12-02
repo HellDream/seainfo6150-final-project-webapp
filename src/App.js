@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Router, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import Home from './pages/home/homepage.jsx';
 import CategoryPage from './pages/category/Category.jsx';
