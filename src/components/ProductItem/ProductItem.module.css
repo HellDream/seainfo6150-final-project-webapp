@@ -6,7 +6,7 @@
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.3);
     font-family: 'Raleway', serif;
     justify-content: space-between;
-    width: 25rem;
+    width: 20rem;
     text-decoration: none;
     padding-bottom: 1rem;
 }
@@ -63,4 +63,16 @@
     text-decoration: none;
     font-weight: 500;
 
+}
+
+@media screen and (min-width: 500px) {
+    .product {
+        width: 25rem;
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width:900px) {
+    .product {
+        width: 20rem;
+    }
 }
