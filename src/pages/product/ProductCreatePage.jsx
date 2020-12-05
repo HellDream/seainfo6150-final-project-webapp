@@ -38,6 +38,25 @@ const ProductCreatePage = (props) => {
         setSelectCategory(event.target.value);
         setData({ ...data, category: event.target.value.toLowerCase() });
     };
+
+    const handleNext = (event) =>{
+        event.preventDefault();
+        if(!selectCategory) {
+            setDialogState({
+                open: true,
+                message: 'Please select a category to move on...',
+                ok: () => {
+                    setDialogState({ ...dialogState, open: false });
+                },
+                onClose: () => {
+                    setDialogState({ ...dialogState, open: false });
+                },
+            });
+        }else {
+            setNext(!next);
+        }
+    }
+    
     const categoryFormPage = (
         <section className={styles.section}>
             <div className={styles.container}>
@@ -143,10 +162,7 @@ const ProductCreatePage = (props) => {
                     </div>
                     <button
                         className={styles.submitButton}
-                        onClick={(event) => {
-                            event.preventDefault();
-                            setNext(!next);
-                        }}
+                        onClick={handleNext}
                     >
                         Next
                     </button>
