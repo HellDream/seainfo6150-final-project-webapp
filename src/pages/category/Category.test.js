@@ -3,6 +3,7 @@ import Category from './Category';
 import { render } from '@testing-library/react'
 
 import img from '../../images/books.jpg';
+import { BrowserRouter } from 'react-router-dom';
 const category = {
     slug: 1,
     imageURI: img,
@@ -10,7 +11,7 @@ const category = {
 };
 describe('CategoryItem tests', () => {
     it('renders correctly', () => {
-        const { container } = render(<Category categoryTitle="books" />);
+        const { container } = render(<BrowserRouter><Category categoryTitle="books" /></BrowserRouter>);
         expect(container).toMatchSnapshot();
     });
 });

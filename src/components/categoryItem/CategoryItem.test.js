@@ -1,8 +1,9 @@
 import React from 'react';
 import CategoryItem from './CategoryItem';
-import { render } from '@testing-library/react'
+import { render } from '@testing-library/react';
 
 import img from '../../images/books.jpg';
+import { BrowserRouter } from 'react-router-dom';
 const category = {
     slug: 1,
     imageURI: img,
@@ -10,8 +11,11 @@ const category = {
 };
 describe('CategoryItem tests', () => {
     it('renders correctly', () => {
-        const { container } = render(<CategoryItem category={category} />);
+        const { container } = render(
+            <BrowserRouter>
+                <CategoryItem category={category} />
+            </BrowserRouter>
+        );
         expect(container).toMatchSnapshot();
     });
 });
-  

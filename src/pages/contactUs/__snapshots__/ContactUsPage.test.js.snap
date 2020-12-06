@@ -16,7 +16,7 @@ exports[`ContactUsPage tests renders correctly 1`] = `
         />
         <a
           class="homeLink"
-          to="/"
+          href="/"
         >
           <h3
             class="title"

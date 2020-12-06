@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, BrowserRouter } from 'react-router-dom';
 
 import Home from './pages/home/homepage.jsx';
 import CategoryPage from './pages/category/Category.jsx';
@@ -21,6 +21,7 @@ function App() {
         <>
             {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
+            <BrowserRouter>
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/create" exact component={ProductCreatePage} />
@@ -58,6 +59,7 @@ function App() {
                 />
                 <Route component={Error} />
             </Switch>
+            </BrowserRouter>
         </>
     );
 }

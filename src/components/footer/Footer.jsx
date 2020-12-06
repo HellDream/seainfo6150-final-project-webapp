@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 
 const Footer = () => {
     return <footer className={styles.container}>
-        <a className={styles.content} href="/contact-us">Contact us?</a>
+        <Link className={styles.content} to="/contact-us">Contact us?</Link>
     </footer>
 }
 
