@@ -61,7 +61,7 @@ const ProductPage = (props) => {
                         <img
                             className={styles.image}
                             src={product.imageUrl}
-                            alt="book"
+                            alt={product.title}
                         />
                     </div>
                     <div className={styles.titleContainer}>
