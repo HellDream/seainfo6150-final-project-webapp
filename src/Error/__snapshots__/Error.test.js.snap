@@ -20,7 +20,7 @@ exports[`Error tests renders correctly 1`] = `
       </div>
       <a
         class="homeLink"
-        to="/"
+        href="/"
       >
         Home
       </a>
