@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error tests renders correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="content"
+    >
+      <div
+        class="title"
+      >
+         It seems like you are lost...
+      </div>
+      <div
+        class="text"
+      >
+        Don't worry, this may not mean anything.
+      </div>
+      <a
+        class="homeLink"
+        to="/"
+      >
+        Home
+      </a>
+    </div>
+  </div>
+</div>
+`;

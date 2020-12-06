@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryItem tests renders correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="dialogWrapper"
+    >
+      <button
+        class="closeBtn"
+      >
+         
+      </button>
+      <h3
+        class="content"
+      >
+        message
+      </h3>
+      <button
+        class="okBtn"
+      >
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+`;

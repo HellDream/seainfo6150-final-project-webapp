@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryItem tests renders correctly 1`] = `
+<div>
+  <div>
+    <div />
+    <header
+      class="header"
+    >
+      <div
+        class="navbar"
+      >
+        <button
+          class="backBtn"
+        />
+        <a
+          class="homeLink"
+          to="/"
+        >
+          <h3
+            class="title"
+          >
+            thrift store
+          </h3>
+        </a>
+        <div
+          class="links"
+        >
+          <a
+            class="createLink"
+            to="/create"
+          >
+            create
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
+  <section
+    class="section"
+  >
+    <div
+      class="container"
+    >
+      <div
+        class="imageContainer"
+      >
+        <img
+          alt="book"
+          class="image"
+          src="books.jpg"
+        />
+      </div>
+      <div
+        class="titleContainer"
+      >
+        <h3
+          class="title"
+        >
+          book
+        </h3>
+        <h4
+          class="price"
+        >
+          $
+          2.33
+        </h4>
+      </div>
+      <div
+        class="contactContainer"
+      >
+        <address
+          class="contact"
+        >
+          Posted by 
+          undefined 
+          <a
+            href="mailto:kate.farley@nytimes.com"
+          />
+        </address>
+        <time
+          datetime="2011-10-05T14:48:00.000Z"
+        >
+          9 years ago
+           
+        </time>
+      </div>
+      <div
+        class="descriptionContainer"
+      >
+        <p>
+          description
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+`;

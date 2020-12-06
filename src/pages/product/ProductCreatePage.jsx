@@ -329,16 +329,17 @@ const ProductCreatePage = (props) => {
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <button className={styles.imgBtn} type="button">
+                        <div className={styles.imgBtn}>
                             <label htmlFor="image">Upload Image</label>
                             <input
                                 type="file"
                                 id="image"
                                 className={styles.imageInput}
+                                name="image"
                                 accept="image/*"
                                 onChange={handleImageChange}
                             />
-                        </button>
+                        </div>
                         {imgData.imageUrl && (
                             <img
                                 src={imgData.imageUrl}

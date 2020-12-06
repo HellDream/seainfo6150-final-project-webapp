@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryItem tests renders correctly 1`] = `
+<div>
+  <li
+    class="category"
+  >
+    <a
+      class="link"
+      href="/books"
+    >
+      <div
+        class="imageBlock"
+      >
+        <img
+          alt="undefined"
+          class="image"
+          src="books.jpg"
+        />
+      </div>
+      <h3
+        class="title"
+      >
+        books
+      </h3>
+    </a>
+  </li>
+</div>
+`;

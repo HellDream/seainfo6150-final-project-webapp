@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const CategoryItem = (props) => {
     return (
         <li className={styles.category}>
-            <Link className={styles.link} to={props.category.title}>
+            <a className={styles.link} href={"/"+props.category.title}>
                 <div className={styles.imageBlock}>
                     <img
                         className={styles.image}
@@ -13,7 +13,7 @@ const CategoryItem = (props) => {
                     />
                 </div>
                 <h3 className={styles.title}>{props.category.title}</h3>
-            </Link>
+            </a>
         </li>
     );
 };

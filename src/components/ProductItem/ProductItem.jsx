@@ -8,18 +8,19 @@ const ProductItem = (props) => {
     dayjs.extend(relativeTime);
     return (
         <li className={styles.product}>
-            <Link
+            <a
+                href={`/${props.category}/product/${props.product.slug}`}
                 className={styles.link}
-                to={{
-                    pathname: `${props.category}/product/${props.product.slug}`,
-                    product: props.product,
-                }}
+                // to={{
+                //     pathname: `/${props.category}/product/${props.product.slug}`,
+                //     product: props.product,
+                // }}
             >
                 <div className={styles.imageBlock}>
                     <img
                         className={styles.image}
                         src={props.product.imageUrl}
-                        alt={`${props.title}`}
+                        alt={`${props.product.title}`}
                     />
                 </div>
                 <div className={styles.productInfoBlock}>
@@ -34,7 +35,7 @@ const ProductItem = (props) => {
                 >
                     {dayjs(props.product.postedTime).fromNow()}
                 </time>
-            </Link>
+            </a>
         </li>
     );
 };

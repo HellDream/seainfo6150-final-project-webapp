@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 
-const Footer = (props) => {
+const Footer = () => {
     return <footer className={styles.container}>
-        <Link className={styles.content} to="/contact-us">Contact us?</Link>
+        <a className={styles.content} href="/contact-us">Contact us?</a>
     </footer>
 }
 

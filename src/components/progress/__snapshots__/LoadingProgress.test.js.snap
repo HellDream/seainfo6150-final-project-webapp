@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoadingProgress tests renders correctly 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="loader"
+    />
+  </div>
+</div>
+`;

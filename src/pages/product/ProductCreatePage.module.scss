@@ -132,11 +132,18 @@
     font-size: 1rem;
     color: white;
     border: none;
-    cursor: pointer;
+    display: flex;
+    place-items: center;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+
+    label {
+        cursor: pointer;
+    }
 }
 
 .imageInput {
-    display:none;
+    display: none;
 }
 .selectedImage {
     place-self: center;

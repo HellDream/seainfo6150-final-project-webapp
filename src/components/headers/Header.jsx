@@ -29,14 +29,14 @@ const Header = (props) => {
             <header className={styles.header}>
                 <div className={styles.navbar}>
                     {backBtn}
-                    <Link className={styles.homeLink} to="/">
+                    <a className={styles.homeLink} href="/">
                         <h3 className={styles.title}>thrift store</h3>
-                    </Link>
+                    </a>
                     <div className={styles.links}>
                         {!props.createPage && (
-                            <Link className={styles.createLink} to="/create">
+                            <a className={styles.createLink} href="/create">
                                 create
-                            </Link>
+                            </a>
                         )}
 
                         {props.createPage && (

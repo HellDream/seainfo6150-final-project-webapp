@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactUsPage tests renders correctly 1`] = `
+<div>
+  <div />
+  <div>
+    <div />
+    <header
+      class="header"
+    >
+      <div
+        class="navbar"
+      >
+        <div
+          class="empty"
+        />
+        <a
+          class="homeLink"
+          to="/"
+        >
+          <h3
+            class="title"
+          >
+            thrift store
+          </h3>
+        </a>
+        <div
+          class="links"
+        >
+          <button
+            class="cancel"
+          >
+            cancel
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+  <section
+    class="section"
+  >
+    <div
+      class="container"
+    >
+      <h3
+        class="formTitle"
+      >
+        Tell Us What You Think!
+      </h3>
+      <form
+        class="form"
+      >
+        <div
+          class="inputContainer"
+        >
+          <label
+            class="label"
+            for="message"
+          >
+            Your Email:
+          </label>
+          <input
+            class="input"
+            required=""
+            type="email"
+          />
+        </div>
+        <div
+          class="inputContainer"
+        >
+          <label
+            class="label"
+            for="message"
+          >
+            Your Message:
+          </label>
+          <textarea
+            class="inputTextArea"
+            id="message"
+            name="message"
+            required=""
+            type="text"
+          />
+        </div>
+        <button
+          class="submitButton"
+          type="submit"
+        >
+          Submit
+        </button>
+      </form>
+    </div>
+  </section>
+</div>
+`;

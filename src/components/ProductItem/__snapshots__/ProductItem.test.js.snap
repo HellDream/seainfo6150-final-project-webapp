@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem tests renders correctly 1`] = `
+<div>
+  <li
+    class="product"
+  >
+    <a
+      class="link"
+      href="/books/product/1"
+    >
+      <div
+        class="imageBlock"
+      >
+        <img
+          alt="book"
+          class="image"
+          src="books.jpg"
+        />
+      </div>
+      <div
+        class="productInfoBlock"
+      >
+        <h3
+          class="title"
+        >
+          book
+        </h3>
+        <h4
+          class="price"
+        >
+          $
+          2.33
+        </h4>
+      </div>
+      <time
+        class="time"
+        datetime="2011-10-05T14:48:00.000Z"
+      >
+        9 years ago
+      </time>
+    </a>
+  </li>
+</div>
+`;

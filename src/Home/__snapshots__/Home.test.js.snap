@@ -6,7 +6,7 @@ exports[`renders the home component correctly 1`] = `
     The home page
     <img
       alt="tree frog"
-      src="/images/treefrog.jpg"
+      src="treefrog.jpg"
     />
     <div>
       <form>

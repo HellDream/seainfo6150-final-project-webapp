@@ -9,7 +9,7 @@ const Error = () => {
                 <div className={styles.title}> It seems like you are lost...</div>
                 <div className={styles.text}>Don't worry, this may not mean anything.</div>
 
-                <Link className={styles.homeLink} to="/">Home</Link>
+                <a className={styles.homeLink} to="/">Home</a>
             </div>
         </div>
     )
