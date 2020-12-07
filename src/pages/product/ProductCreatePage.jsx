@@ -21,6 +21,8 @@ const ProductCreatePage = (props) => {
         title: '',
         price: 0.0,
         description: '',
+        damage: 'new',
+        reason:1
     });
 
     const [imgData, setImgData] = useState({
@@ -195,7 +197,7 @@ const ProductCreatePage = (props) => {
         event.preventDefault();
         setLoading(true);
         const imageUrl = await uploadImage();
-        const uploadData = {...data, imageUrl}
+        const uploadData = {...data, imageUrl};
         console.log(uploadData);
         const res = await fetch('https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/createProduct',{
             method: 'POST',
@@ -237,7 +239,6 @@ const ProductCreatePage = (props) => {
     const handleChange = (event) => {
         const name = event.target.name;
         setData({ ...data, [name]: event.target.value });
-        console.log(data);
     };
 
     const handleImageChange = (event) => {
@@ -271,6 +272,8 @@ const ProductCreatePage = (props) => {
                             value={data.contactName}
                             onChange={handleChange}
                             required
+                            pattern="[a-zA-Z0-9\s]{1,20}"
+                            title="Contact name should be less than 20 characters with only letters, space or digits"
                         />
                     </div>
                     <div className={styles.inputContainer}>
@@ -299,21 +302,48 @@ const ProductCreatePage = (props) => {
                             value={data.title}
                             onChange={handleChange}
                             required
+                            pattern="[a-zA-Z0-9\s]{1,30}"
+                            title="Item title should be less than 30 characters with only letters, space or digits"
                         />
                     </div>
                     <div className={styles.inputContainer}>
                         <label className={styles.label} htmlFor="price">
                             Price*
                         </label>
+                        <span>$</span>
                         <input
                             className={styles.input}
                             type="number"
+                            min="0.00"
+                            data-number-to-fixed="2" 
+                            step="0.01"
                             id="price"
                             name="price"
                             value={data.price}
                             onChange={handleChange}
                             required
+                            title="Please enter a valid price"
                         />
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label className={styles.label} htmlFor="damage">Damage Level</label>
+                        <select className={styles.input} name="damage" onChange={handleChange}>
+                            <option value="new" selected={data.damage==="new"}>Brand New</option>
+                            <option value="once" selected={data.damage==="once"}>Used Once</option>
+                            <option value="90%" selected={data.damage==="90%"}>90% New (A few tiny scratches)</option>
+                            <option value="80%" selected={data.damage==="80%"}> 80% New (A few scratches)</option>
+                            <option value="functional" selected={data.damage==="functional"}>Functional</option>
+                        </select>
+                    </div>
+                    <div className={styles.inputContainer}>
+                        <label className={styles.label} htmlFor="reason">Damage Level</label>
+                        <select className={styles.input} name="reason" onChange={handleChange}>
+                            <option value={1} selected={data.reason===1}>Don't need it anymore</option>
+                            <option value={2} selected={data.reason===2}>Need space for other stuff</option>
+                            <option value={3} selected={data.reason===3}>Declutter</option>
+                            <option value={4} selected={data.reason===4}>Want to get some money</option>
+                            <option value={5} selected={data.reason===5}>No reason</option>
+                        </select>
                     </div>
                     <div className={styles.inputContainer}>
                         <label className={styles.label} htmlFor="description">
