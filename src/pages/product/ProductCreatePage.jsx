@@ -336,7 +336,7 @@ const ProductCreatePage = (props) => {
                         </select>
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} htmlFor="reason">Damage Level</label>
+                        <label className={styles.label} htmlFor="reason">Why Sell?</label>
                         <select className={styles.input} name="reason" onChange={handleChange}>
                             <option value={1} selected={data.reason===1}>Don't need it anymore</option>
                             <option value={2} selected={data.reason===2}>Need space for other stuff</option>
