@@ -5,6 +5,7 @@ import { isEmpty } from 'lodash';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import LoadingProgress from '../../components/progress/LoadingProgress';
+import Footer from "../../components/footer/Footer.jsx";
 import Error from '../../Error/Error';
 const ProductPage = (props) => {
     dayjs.extend(relativeTime);
@@ -86,6 +87,8 @@ const ProductPage = (props) => {
                     </div>
                 </div>
             </section>
+            <Footer />
+
         </>
     );
 };
