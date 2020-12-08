@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f031f31dc54e18ee37236a61b1557085",
+    "revision": "8e9f458aa9163f3a33905fcb81a85e56",
     "url": "/seainfo6150-final-project-webapp/index.html"
   },
   {
-    "revision": "a1a044dfb29d3c6732f5",
-    "url": "/seainfo6150-final-project-webapp/static/css/main.e9b6d3d9.chunk.css"
+    "revision": "70afbf1d377198d54fc6",
+    "url": "/seainfo6150-final-project-webapp/static/css/main.fdce4443.chunk.css"
   },
   {
     "revision": "902881a09ec68b04fa39",
     "url": "/seainfo6150-final-project-webapp/static/js/2.aa1439f5.chunk.js"
   },
   {
-    "revision": "a1a044dfb29d3c6732f5",
-    "url": "/seainfo6150-final-project-webapp/static/js/main.904567c1.chunk.js"
+    "revision": "70afbf1d377198d54fc6",
+    "url": "/seainfo6150-final-project-webapp/static/js/main.902a3e50.chunk.js"
   },
   {
     "revision": "940ec4a42937c37ae625",
@@ -22,6 +22,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "fc35956dcf4097101cc3dbc718d40529",
     "url": "/seainfo6150-final-project-webapp/static/media/back.fc35956d.svg"
+  },
+  {
+    "revision": "1b4ce39eb1346190f98b272a98ac8b24",
+    "url": "/seainfo6150-final-project-webapp/static/media/back2.1b4ce39e.svg"
   },
   {
     "revision": "809949fcda59df7c8b321d9f8802d050",
