@@ -23,7 +23,6 @@
     padding-top:2rem;
 }
 .backBtn {
-    background-color: transparent;
     border:none;
     background: url("../../images/back.svg");
     background-repeat: no-repeat;
@@ -31,11 +30,14 @@
     width: 2rem;
     height: 2rem;
     cursor: pointer;
-    opacity: 0.8;
 }
 
 .backBtn:hover {
-    opacity: 1;
+    background: url("../../images/back2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
 }
 .backBtn:hover:active {
     border:none;
