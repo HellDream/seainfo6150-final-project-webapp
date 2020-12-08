@@ -9,7 +9,7 @@ const CategoryItem = (props) => {
                     <img
                         className={styles.image}
                         src={props.category.imageURI}
-                        alt={`${props.title}`}
+                        alt={`${props.category.title}`}
                     />
                 </div>
                 <h3 className={styles.title}>{props.category.title}</h3>
