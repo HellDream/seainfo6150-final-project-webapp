@@ -1,8 +1,12 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styles from './Error.module.css';
 import { Link } from 'react-router-dom';
 import img from "../images/panda.jpg"
 const Error = () => {
+    useEffect(()=>{
+        document.title = "Thrift Store - Error";
+    });
+    
     return (
         // <div className={styles.container}>
         <div className={styles.content}>
