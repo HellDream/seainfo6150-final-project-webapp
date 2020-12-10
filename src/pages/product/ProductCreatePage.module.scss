@@ -39,6 +39,14 @@
     width: 2rem;
     height: 2rem;
 }
+
+.backBtn:focus {
+    background: url("../../images/back2.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 2rem;
+    height: 2rem;
+}
 .backBtn:hover:active {
     border:none;
 }
@@ -93,7 +101,13 @@
 }
 
 .radio {
-    display: none;
+    width: 0;
+    height: 0;
+}
+
+.radio:focus ~ label {
+    border: 2px solid rgb(37, 37, 37);
+    border-radius: 5px;
 }
 
 .inputContainer {
@@ -130,25 +144,31 @@
 }
 
 .imgBtn {
-    height: 2.5rem;
-    background-color: #28282a;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: white;
-    border: none;
-    display: flex;
-    place-items: center;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-
     label {
         cursor: pointer;
+        height: 2.5rem;
+        background-color: #28282a;
+        border-radius: 5px;
+        font-size: 1rem;
+        color: white;
+        border: none;
+        display: flex;
+        place-items: center;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
     }
 }
 
 .imageInput {
-    display: none;
+    width: 0;
+    height: 0;
 }
+
+.imageInput:focus ~ label {
+    background-color: #4b4b4b;
+
+}
+
 .selectedImage {
     place-self: center;
     max-width:20rem;
@@ -169,7 +189,11 @@
 }
 
 .submitButton:hover {
-    background-color: #2d2d2e;
+    background-color: #4b4b4b;
+}
+
+.submitButton:focus {
+    background-color: #4b4b4b;
 }
 
 @media screen and (min-width: 500px) {

@@ -25,8 +25,11 @@
     display: block;
 }
 
-.backBtn {
+.backContainer {
     flex:1;
+}
+
+.backBtn {
     background-color: transparent;
     border:none;
     background: url("../../images/back.svg");
@@ -37,6 +40,11 @@
     padding:0;
     cursor: pointer;
     outline:none;
+}
+
+button:focus {
+    border: 1px solid white;
+    border-radius: 4px;
 }
 
 
@@ -85,6 +93,10 @@
     font-family: 'Source Sans Pro', serif;
     padding:0;
 }
+/* .cancel:focus {
+    border: 1px solid white;
+    border-radius: 4px;
+} */
 
 @media screen and (max-width:500px){
     .title {

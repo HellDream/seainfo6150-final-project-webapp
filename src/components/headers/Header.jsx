@@ -12,7 +12,9 @@ const Header = (props) => {
     };
 
     const backBtn = props.back ? (
-        <button className={styles.backBtn} onClick={props.back}></button>
+        <div className={styles.backContainer}>
+            <button className={styles.backBtn} onClick={props.back}></button>
+        </div>
     ) : (
         <div className={styles.empty}></div>
     );

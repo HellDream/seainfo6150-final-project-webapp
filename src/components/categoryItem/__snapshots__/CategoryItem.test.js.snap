@@ -13,7 +13,7 @@ exports[`CategoryItem tests renders correctly 1`] = `
         class="imageBlock"
       >
         <img
-          alt="undefined"
+          alt="books"
           class="image"
           src="books.jpg"
         />

@@ -68,7 +68,7 @@ exports[`Home tests renders correctly 1`] = `
               class="imageBlock"
             >
               <img
-                alt="undefined"
+                alt="books"
                 class="image"
                 src="books.jpg"
               />
@@ -91,7 +91,7 @@ exports[`Home tests renders correctly 1`] = `
               class="imageBlock"
             >
               <img
-                alt="undefined"
+                alt="electronics"
                 class="image"
                 src="electronics.jpeg"
               />
@@ -114,7 +114,7 @@ exports[`Home tests renders correctly 1`] = `
               class="imageBlock"
             >
               <img
-                alt="undefined"
+                alt="furnitures"
                 class="image"
                 src="furnitures.jpg"
               />
@@ -137,7 +137,7 @@ exports[`Home tests renders correctly 1`] = `
               class="imageBlock"
             >
               <img
-                alt="undefined"
+                alt="entertainments"
                 class="image"
                 src="entertainments.png"
               />
@@ -160,7 +160,7 @@ exports[`Home tests renders correctly 1`] = `
               class="imageBlock"
             >
               <img
-                alt="undefined"
+                alt="tools"
                 class="image"
                 src="tools.jpg"
               />
@@ -183,7 +183,7 @@ exports[`Home tests renders correctly 1`] = `
               class="imageBlock"
             >
               <img
-                alt="undefined"
+                alt="others"
                 class="image"
                 src="others.jpg"
               />

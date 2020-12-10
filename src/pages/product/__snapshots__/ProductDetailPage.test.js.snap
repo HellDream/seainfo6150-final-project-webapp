@@ -94,5 +94,15 @@ exports[`CategoryItem tests renders correctly 1`] = `
       </div>
     </div>
   </section>
+  <footer
+    class="container"
+  >
+    <a
+      class="content"
+      href="/contact-us"
+    >
+      Contact us?
+    </a>
+  </footer>
 </div>
 `;

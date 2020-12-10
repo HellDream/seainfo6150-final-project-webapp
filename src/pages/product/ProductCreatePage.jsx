@@ -22,7 +22,7 @@ const ProductCreatePage = (props) => {
         price: 0.0,
         description: '',
         damage: 'new',
-        reason:1
+        reason: 1,
     });
 
     const [imgData, setImgData] = useState({
@@ -41,9 +41,9 @@ const ProductCreatePage = (props) => {
         setData({ ...data, category: event.target.value.toLowerCase() });
     };
 
-    const handleNext = (event) =>{
+    const handleNext = (event) => {
         event.preventDefault();
-        if(!selectCategory) {
+        if (!selectCategory) {
             setDialogState({
                 open: true,
                 message: 'Please select a category to move on...',
@@ -54,11 +54,11 @@ const ProductCreatePage = (props) => {
                     setDialogState({ ...dialogState, open: false });
                 },
             });
-        }else {
+        } else {
             setNext(!next);
         }
-    }
-    
+    };
+
     const categoryFormPage = (
         <section className={styles.section}>
             <div className={styles.container}>
@@ -75,7 +75,10 @@ const ProductCreatePage = (props) => {
                             checked={selectCategory === 'Books'}
                             className={styles.radio}
                         />
-                        <label className={styles.categoryLabel} htmlFor="Books">
+                        <label
+                            className={styles.categoryLabel}
+                            htmlFor="Books"
+                        >
                             <p>Books</p>
                         </label>
                     </div>
@@ -93,8 +96,7 @@ const ProductCreatePage = (props) => {
                             className={styles.categoryLabel}
                             htmlFor="Electronics"
                         >
-                            <p>
-                            Electronics</p>
+                            <p>Electronics</p>
                         </label>
                     </div>
                     <div className={styles.labelContainer}>
@@ -107,7 +109,10 @@ const ProductCreatePage = (props) => {
                             checked={selectCategory === 'Tools'}
                             className={styles.radio}
                         />
-                        <label className={styles.categoryLabel} htmlFor="Tools">
+                        <label
+                            className={styles.categoryLabel}
+                            htmlFor="Tools"
+                        >
                             <p>Tools</p>
                         </label>
                     </div>
@@ -173,8 +178,8 @@ const ProductCreatePage = (props) => {
         </section>
     );
 
-    const uploadImage  = async () =>{
-        if(imgData.image){
+    const uploadImage = async () => {
+        if (imgData.image) {
             const formData = new FormData();
             formData.append('image', imgData.image, imgData.image.name);
             const res = await fetch(
@@ -185,29 +190,31 @@ const ProductCreatePage = (props) => {
                 }
             );
             const json = await res.json();
-            if(res.status!==200) 
-                return null;
+            if (res.status !== 200) return null;
             return json.imageUrl;
-        }else {
+        } else {
             return null;
         }
-    }
+    };
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         setLoading(true);
         const imageUrl = await uploadImage();
-        const uploadData = {...data, imageUrl};
+        const uploadData = { ...data, imageUrl };
         console.log(uploadData);
-        const res = await fetch('https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/createProduct',{
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json', 
-            },
-            body: JSON.stringify(uploadData)
-        });
+        const res = await fetch(
+            'https://us-central1-seainfo6150-final-project.cloudfunctions.net/api/createProduct',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(uploadData),
+            }
+        );
         setLoading(false);
-        if(res.status!==201){
+        if (res.status !== 201) {
             setDialogState({
                 open: true,
                 message: 'Something went wrong with the process...',
@@ -218,22 +225,22 @@ const ProductCreatePage = (props) => {
                     setDialogState({ ...dialogState, open: false });
                 },
             });
-        }else {
-            const data =await res.json();
+        } else {
+            const data = await res.json();
             setDialogState({
                 open: true,
                 message: 'You have uploaded your item successfully!',
                 ok: () => {
                     setDialogState({ ...dialogState, open: false });
-                    props.history.push(`/${data.category}/product/${data.slug}`)
-                    
+                    props.history.push(
+                        `/${data.category}/product/${data.slug}`
+                    );
                 },
                 onClose: () => {
                     setDialogState({ ...dialogState, open: false });
                 },
-            });  
+            });
         }
-
     };
 
     const handleChange = (event) => {
@@ -243,7 +250,9 @@ const ProductCreatePage = (props) => {
 
     const handleImageChange = (event) => {
         const image = event.target.files[0];
-        setImgData({ image: image, imageUrl:URL.createObjectURL(image) });
+        if(image){
+            setImgData({ image: image, imageUrl: URL.createObjectURL(image) });
+        }
     };
 
     const itemFormPage = (
@@ -315,7 +324,7 @@ const ProductCreatePage = (props) => {
                             className={styles.input}
                             type="number"
                             min="0.00"
-                            data-number-to-fixed="2" 
+                            data-number-to-fixed="2"
                             step="0.01"
                             id="price"
                             name="price"
@@ -326,23 +335,43 @@ const ProductCreatePage = (props) => {
                         />
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} htmlFor="damage">Damage Level</label>
-                        <select className={styles.input} name="damage" onChange={handleChange}>
-                            <option value="new" selected={data.damage==="new"}>Brand New</option>
-                            <option value="once" selected={data.damage==="once"}>Used Once</option>
-                            <option value="90%" selected={data.damage==="90%"}>90% New (A few tiny scratches)</option>
-                            <option value="80%" selected={data.damage==="80%"}> 80% New (A few scratches)</option>
-                            <option value="functional" selected={data.damage==="functional"}>Functional</option>
+                        <label className={styles.label} htmlFor="damage">
+                            Damage Level
+                        </label>
+                        <select
+                            className={styles.input}
+                            name="damage"
+                            onChange={handleChange}
+                            defaultValue="new"
+                        >
+                            <option value="new">Brand New</option>
+                            <option value="once">Used Once</option>
+                            <option value="90%">
+                                90% New (A few tiny scratches)
+                            </option>
+                            <option value="80%">
+                                80% New (A few scratches)
+                            </option>
+                            <option value="functional">Functional</option>
                         </select>
                     </div>
                     <div className={styles.inputContainer}>
-                        <label className={styles.label} htmlFor="reason">Why Sell?</label>
-                        <select className={styles.input} name="reason" onChange={handleChange}>
-                            <option value={1} selected={data.reason===1}>Don't need it anymore</option>
-                            <option value={2} selected={data.reason===2}>Need space for other stuff</option>
-                            <option value={3} selected={data.reason===3}>Declutter</option>
-                            <option value={4} selected={data.reason===4}>Want to get some money</option>
-                            <option value={5} selected={data.reason===5}>No reason</option>
+                        <label className={styles.label} htmlFor="reason">
+                            Why Sell?
+                        </label>
+                        <select
+                            className={styles.input}
+                            name="reason"
+                            onChange={handleChange}
+                            defaultValue={1}
+                        >
+                            <option value={1}>Don't need it anymore</option>
+                            <option value={2}>
+                                Need space for other stuff
+                            </option>
+                            <option value={3}>Declutter</option>
+                            <option value={4}>Want to get some money</option>
+                            <option value={5}>No reason</option>
                         </select>
                     </div>
                     <div className={styles.inputContainer}>
@@ -360,7 +389,6 @@ const ProductCreatePage = (props) => {
                     </div>
                     <div className={styles.inputContainer}>
                         <div className={styles.imgBtn}>
-                            <label htmlFor="image">Upload Image</label>
                             <input
                                 type="file"
                                 id="image"
@@ -369,6 +397,7 @@ const ProductCreatePage = (props) => {
                                 accept="image/*"
                                 onChange={handleImageChange}
                             />
+                            <label htmlFor="image">Upload Image</label>
                         </div>
                         {imgData.imageUrl && (
                             <img
@@ -399,7 +428,7 @@ const ProductCreatePage = (props) => {
                     props.history.goBack();
                 }}
             />
-            {loading  && <LoadingProgress />}
+            {loading && <LoadingProgress />}
             {next === true ? categoryFormPage : itemFormPage}
         </>
     );
