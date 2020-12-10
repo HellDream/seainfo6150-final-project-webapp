@@ -1,24 +1,20 @@
-.container {
-    width: 100%;
-    height: 100%;
-    top:0;
-    left:0;
-    background-image: url("../images/space.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    position: fixed;
-    font-family: 'Raleway', serif;
-}
-
 .content {
+    font-family: 'Raleway', serif;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100%;
-    color: white;    
-    gap:2rem;
-
+    gap:1rem;
+}
+.imageContainer {
+    max-width: 20rem;
+    max-height: 20rem;
+    box-sizing: border-box;
+}
+.image {
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .title {
@@ -34,19 +30,21 @@
 
 .homeLink {
     text-decoration: none;
-    color: white;    
-    border: 3px solid white;
+    border: 3px solid #28282a;
     border-radius: 20px;
     background-color: transparent;
     font-size: 1.5rem;
     padding-left:1rem;
     padding-right:1rem;
     cursor: pointer;
+    text-decoration: none;
+    color: #28282a;
 }
 
 .homeLink:hover {
-    background-color: #14143b;
-    border: 3px solid #14143b;
+    background-color: #28282a;
+    border: 3px solid #28282a;
+    color:white;
 }
 
 
@@ -60,5 +58,13 @@
     }
     .homeLink {
         font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 400px) {
+    .imageContainer {
+        max-width: 25rem;
+        max-height: 25rem;
+        box-sizing: border-box;
     }
 }

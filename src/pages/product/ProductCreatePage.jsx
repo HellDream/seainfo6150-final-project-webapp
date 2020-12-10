@@ -75,10 +75,7 @@ const ProductCreatePage = (props) => {
                             checked={selectCategory === 'Books'}
                             className={styles.radio}
                         />
-                        <label
-                            className={styles.categoryLabel}
-                            htmlFor="Books"
-                        >
+                        <label className={styles.categoryLabel} htmlFor="Books">
                             <p>Books</p>
                         </label>
                     </div>
@@ -109,10 +106,7 @@ const ProductCreatePage = (props) => {
                             checked={selectCategory === 'Tools'}
                             className={styles.radio}
                         />
-                        <label
-                            className={styles.categoryLabel}
-                            htmlFor="Tools"
-                        >
+                        <label className={styles.categoryLabel} htmlFor="Tools">
                             <p>Tools</p>
                         </label>
                     </div>
@@ -250,7 +244,7 @@ const ProductCreatePage = (props) => {
 
     const handleImageChange = (event) => {
         const image = event.target.files[0];
-        if(image){
+        if (image) {
             setImgData({ image: image, imageUrl: URL.createObjectURL(image) });
         }
     };
@@ -311,8 +305,8 @@ const ProductCreatePage = (props) => {
                             value={data.title}
                             onChange={handleChange}
                             required
-                            pattern="[a-zA-Z0-9\s]{1,30}"
-                            title="Item title should be less than 30 characters with only letters, space or digits"
+                            pattern="^.{1,30}$"
+                            title="Item title should be less than 30 characters"
                         />
                     </div>
                     <div className={styles.inputContainer}>
