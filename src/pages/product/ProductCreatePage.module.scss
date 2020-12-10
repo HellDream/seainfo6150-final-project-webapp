@@ -144,7 +144,11 @@
 }
 
 .imgBtn {
+    display: flex;
+    place-items: center;
     label {
+        display: inline-flex;
+        place-items: center;
         cursor: pointer;
         height: 2.5rem;
         background-color: #28282a;
@@ -152,8 +156,7 @@
         font-size: 1rem;
         color: white;
         border: none;
-        display: flex;
-        place-items: center;
+        text-align: center;
         padding-left: 0.5rem;
         padding-right: 0.5rem;
     }
@@ -166,7 +169,6 @@
 
 .imageInput:focus ~ label {
     background-color: #4b4b4b;
-
 }
 
 .selectedImage {
