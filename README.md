@@ -2,6 +2,16 @@
 
 Link to final project assignment: https://northeastern.instructure.com/courses/23067/assignments/23113
 
+Link to project: https://helldream.github.io/seainfo6150-final-project-webapp/
+
+**Note:**
+
+To access 404 Error page, The website should be run locally. To trigger the error page, a random URL should work, such as:
+
+http://localhost:3000/abab/
+
+http://localhost:3000/abab/cdef
+
 <hr>
 
 # Github instructions
