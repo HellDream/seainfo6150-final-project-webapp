@@ -3,28 +3,33 @@
 exports[`Error tests renders correctly 1`] = `
 <div>
   <div
-    class="container"
+    class="content"
   >
     <div
-      class="content"
+      class="imageContainer"
     >
-      <div
-        class="title"
-      >
-         It seems like you are lost...
-      </div>
-      <div
-        class="text"
-      >
-        Don't worry, this may not mean anything.
-      </div>
-      <a
-        class="homeLink"
-        href="/"
-      >
-        Home
-      </a>
+      <img
+        alt="Error"
+        class="image"
+        src="panda.jpg"
+      />
     </div>
+    <div
+      class="title"
+    >
+       It seems like you are lost...
+    </div>
+    <div
+      class="text"
+    >
+      Don't worry, this may not mean anything.
+    </div>
+    <a
+      class="homeLink"
+      href="/"
+    >
+      Home
+    </a>
   </div>
 </div>
 `;

@@ -10,9 +10,13 @@ exports[`CategoryItem tests renders correctly 1`] = `
       <div
         class="navbar"
       >
-        <button
-          class="backBtn"
-        />
+        <div
+          class="backContainer"
+        >
+          <button
+            class="backBtn"
+          />
+        </div>
         <a
           class="homeLink"
           href="/"
