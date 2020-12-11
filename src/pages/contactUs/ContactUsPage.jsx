@@ -90,7 +90,6 @@ const ContactUsPage = (props) => {
                             </label>
                             <textarea
                                 className={styles.inputTextArea}
-                                type="text"
                                 id="message"
                                 name="message"
                                 required
