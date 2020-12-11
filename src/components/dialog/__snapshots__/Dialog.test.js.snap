@@ -6,13 +6,14 @@ exports[`CategoryItem tests renders correctly 1`] = `
     class="container"
   >
     <div
+      aria-labelledby="dialog_label"
+      aria-modal="true"
       class="dialogWrapper"
+      role="dialog"
     >
       <button
         class="closeBtn"
-      >
-         
-      </button>
+      />
       <h3
         class="content"
       >

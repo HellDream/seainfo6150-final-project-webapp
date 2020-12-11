@@ -6,11 +6,13 @@ import Footer from '../../components/footer/Footer';
 import { isEmpty } from 'lodash';
 import LoadingProgress from '../../components/progress/LoadingProgress';
 import Error from '../../Error/Error';
+import categories from "../../utils/categoryList";
 
 const CategoryPage = (props) => {
     const [products, setProducts] = useState();
     const [hasError, setHasError] = useState(false);
     useEffect(() => {
+        const categoryTitles = categories.map((category)=>{return category.title});
         const category = props.categoryTitle;
         document.title =
             'Thrift Store - ' +
@@ -34,9 +36,12 @@ const CategoryPage = (props) => {
                 setProducts(json);
             }
         };
-
-        if (isEmpty(products) && !hasError) {
-            fetchData();
+        if(!categoryTitles.includes(category)) {
+            setHasError(true);
+        } else {
+            if (isEmpty(products) && !hasError) {
+                fetchData();
+            }
         }
     }, [products, hasError, props.categoryTitle]);
 
