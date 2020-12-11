@@ -103,6 +103,7 @@
 .radio {
     width: 0;
     height: 0;
+    opacity: 0;
 }
 
 .radio:focus ~ label {
